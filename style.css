@@ -1,0 +1,190 @@
+/* VARIABEL WARNA - Mahasiswa bisa mengganti warna di sini */
+:root {
+    --primary-color: #228B22;    /* Forest Green */
+    --secondary-color: #8B4513;  /* Earth Brown */
+    --accent-color: #FFBF00;     /* Sunlight Amber */
+    --bg-main: #F5F5F5;          /* Mist White */
+    --bg-card: #FFFFFF;          /* Pure White */
+    --text-main: #2F4F4F;        /* Deep Moss */
+    --text-secondary: #708090;   /* Soft Olive Gray */
+}
+
+/* RESET DASAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: var(--bg-card);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-main);
+    margin-left: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* HERO SECTION */
+.hero-section {
+    padding: 120px 0 60px;
+    background: linear-gradient(135deg, #fff 50%, var(--bg-main) 100%);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-text { flex: 1; }
+.hero-image { flex: 1; }
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* UTILITIES */
+.section-padding { padding: 80px 0; }
+.section-title { text-align: center; margin-bottom: 15px; color: var(--primary-color); }
+.section-desc { text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--text-secondary); }
+.bg-alt { background-color: var(--bg-card); }
+.bg-accent { background-color: var(--primary-color); color: white; }
+.text-center { text-align: center; }
+
+.img-responsive {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* CARDS */
+.card-grid, .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card, .feature-item {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.card:hover, .feature-item:hover { transform: translateY(-5px); }
+
+/* TOMBOL */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary { background: var(--accent-color); color: #000; }
+.btn-primary:hover { background: #e5ab00; }
+.btn-secondary { background: var(--bg-card); color: var(--primary-color); margin-left: 10px; }
+
+/* TEAM */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid var(--accent-color);
+}
+
+/* FOOTER */
+.footer {
+    background: var(--secondary-color);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* RESPONSIVE & HAMBURGER */
+.hamburger { display: none; cursor: pointer; }
+.hamburger span {
+    display: block; width: 25px; height: 3px; background: var(--primary-color); margin: 5px;
+}
+
+@media (max-width: 768px) {
+    .hero-container, .flex-reverse { flex-direction: column; text-align: center; }
+    .nav-links {
+        display: none; width: 100%; position: absolute; top: 60px; left: 0;
+        background: var(--bg-card); flex-direction: column; padding: 20px;
+    }
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 10px 0; }
+    .hamburger { display: block; }
+}

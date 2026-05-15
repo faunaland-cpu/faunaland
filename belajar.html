@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar FaunaLand</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS Tambahan khusus untuk layout LMS */
+        .lms-container { display: flex; margin-top: 80px; min-height: 100vh; }
+        .sidebar { width: 300px; background: var(--bg-card); padding: 20px; border-right: 1px solid #ddd; height: calc(100vh - 80px); position: sticky; top: 80px; overflow-y: auto; }
+        .main-content { flex: 1; padding: 40px; background: #fff; }
+        .bab-list { list-style: none; }
+        .bab-item { margin-bottom: 15px; }
+        .bab-title { font-weight: bold; color: var(--primary-color); display: block; margin-bottom: 5px; }
+        .subbab-list { list-style: none; padding-left: 15px; }
+        .subbab-list li a { text-decoration: none; color: var(--text-main); font-size: 0.9rem; }
+        .subbab-list li a:hover { color: var(--accent-color); }
+        .content-area { max-width: 800px; margin: 0 auto; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px; }
+        @media (max-width: 768px) { .lms-container { flex-direction: column; } .sidebar { width: 100%; height: auto; position: relative; top: 0; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">← Kembali ke Beranda</a>
+        </div>
+    </nav>
+
+    <div class="lms-container">
+        <aside class="sidebar">
+            <h3>Daftar Materi</h3>
+            <hr><br>
+            <ul class="bab-list">
+                <li class="bab-item">
+                    <span class="bab-title">Bab 1: Tempat Hidup</span>
+                    <ul class="subbab-list">
+                        <li><a href="#">1.1 Hewan Darat</a></li>
+                        <li><a href="#">1.2 Hewan Air</a></li>
+                        <li><a href="#">1.3 Hewan Amfibi</a></li>
+                    </ul>
+                </li>
+                <li class="bab-item">
+                    <span class="bab-title">Bab 2: Cara Bergerak</span>
+                    <ul class="subbab-list">
+                        <li><a href="#">2.1 Melompat</a></li>
+                        <li><a href="#">2.2 Terbang</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="content-area">
+                <h1>Pembelajaran Interaktif FaunaLand</h1>
+                <p>Halaman ini dirancang untuk membantu siswa kelas 3 SD memahami materi pengelompokan hewan melalui pengalaman belajar yang interaktif.</p>
+                
+                <hr style="margin: 30px 0;">
+
+                <div id="materi-display">
+                    <h3>Subbab 1.1: Hewan Hidup di Darat</h3>
+                    <p>Hewan darat adalah hewan yang menghabiskan sebagian besar hidupnya di daratan. Contohnya adalah kucing, sapi, dan gajah.</p>
+                    
+                    <img src="https://i.ibb.co.com/rKvR65fx/Chat-GPT-Image-7-Mei-2026-22-16-06.png" alt="Foto Hewan Darat" class="img-responsive" style="margin: 20px 0;">
+
+                    <h4>Video Pembelajaran</h4>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/CFF2_U-sA0Q?si=Ugp__bO93G7QS7lk" frameborder="0" allowfullscreen></iframe>
+                    </div>
+
+                    <h4>Game Edukasi</h4>
+                    <p>Klik tombol di bawah untuk mencoba tantangan seru!</p>
+                    <a href="https://gemini.google.com/share/1fc48e49b2b1" target="_blank" class="btn-primary">Mainkan Game</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
